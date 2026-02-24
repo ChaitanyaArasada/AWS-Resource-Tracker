@@ -1,0 +1,2 @@
+ Run AWS resource tracker daily at 8 PM IST
+0 20 * * * /bin/bash /home/chaitanya/scripts/aws_resource_tracker.sh >> /home/chaitanya/scripts/output.log 2>&1
