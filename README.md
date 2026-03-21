@@ -10,16 +10,92 @@ By combining Linux scheduling, shell scripting, AWS CLI interaction, and automat
 
 ⚙️ How It Works: 
 
-A Bash script interacts with AWS services using AWS CLI.
-The script fetches details about active AWS resources.
-A cron job schedules the script to run daily.
-Output is stored in a log file for monitoring and auditing.
-This removes the need for manual AWS Console checks and ensures consistent reporting.
+1. A Bash script interacts with AWS services using AWS CLI  
+2. It fetches resource details (S3, EC2, Lambda, IAM)  
+3. The output is written to a report file  
+4. A cron job schedules the script to run daily at 8 PM  
+5. The report is sent via email automatically  
+6. Logs are maintained for debugging and auditing  
 
-🛠 Technologies Used: 
+---
 
-Linux
-Bash Scripting
-AWS CLI
-Cron Scheduler
-JSON Parsing
+## 🛠 Technologies Used
+
+- Linux (Ubuntu)
+- Bash Scripting
+- AWS CLI
+- Cron Scheduler
+- JSON Parsing using `jq`
+- Mail Utilities (for email notifications)
+
+---
+
+## 📂 Project Structure
+
+aws-resource-tracker/
+│── aws_resource_tracker.sh
+│── output.txt
+│── cron.log
+│── README.md
+
+## 📜 Script Features
+
+- Automated AWS resource tracking  
+- Daily scheduled execution using cron  
+- Email reporting functionality  
+- JSON parsing with `jq` for clean output  
+- Logging for monitoring and debugging  
+- Error handling using `set -e`  
+
+---
+Runs daily at 8 PM
+Logs both output and errors into cron.log
+📧 Email Notification
+Sends daily AWS resource usage report via email
+Uses Linux mail utilities (mail)
+Ensures stakeholders receive updates automatically
+🔐 Prerequisites
+
+Before running this project, ensure:
+
+1. AWS CLI is installed and configured
+```
+aws configure
+```
+2. Required IAM Permissions
+s3:ListBucket
+ec2:DescribeInstances
+lambda:ListFunctions
+iam:ListUsers
+
+3. Install Dependencies
+```
+sudo apt update
+sudo apt install jq mailutils -y
+```
+▶️ How to Run Manually
+```
+bash aws_resource_tracker.sh
+```
+
+
+📈 Use Cases
+Daily AWS resource monitoring
+Cost awareness and tracking
+Infrastructure auditing
+DevOps automation practice
+Cloud environment visibility
+🚀 Future Enhancements
+Integrate with AWS SNS instead of email
+Add CloudWatch metrics monitoring
+Filter only running EC2 instances
+Add Slack/Teams notifications
+Convert to Python using Boto3
+Add cost estimation feature
+
+👨‍💻 Author
+
+Chaitanya Arasada
+⭐ Conclusion
+
+This project showcases hands-on experience with AWS automation, Linux scripting, and cloud monitoring. It reflects real-world DevOps practices used in production environments to ensure visibility, efficiency, and reliability in cloud infrastructure management.
