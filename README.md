@@ -31,13 +31,13 @@ By combining Linux scheduling, shell scripting, AWS CLI interaction, and automat
 ---
 
 ## 📂 Project Structure
-
+```
 aws-resource-tracker/
 │── aws_resource_tracker.sh
 │── output.txt
 │── cron.log
 │── README.md
-
+```
 ## 📜 Script Features
 
 - Automated AWS resource tracking  
@@ -96,6 +96,7 @@ Add cost estimation feature
 👨‍💻 Author
 
 Chaitanya Arasada
+
 ⭐ Conclusion
 
 This project showcases hands-on experience with AWS automation, Linux scripting, and cloud monitoring. It reflects real-world DevOps practices used in production environments to ensure visibility, efficiency, and reliability in cloud infrastructure management.
