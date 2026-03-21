@@ -34,7 +34,6 @@ By combining Linux scheduling, shell scripting, AWS CLI interaction, and automat
 ```
 aws-resource-tracker/
 │── aws_resource_tracker.sh
-│── output.txt
 │── cron.log
 │── README.md
 ```
